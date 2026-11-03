@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <a class="brand" href="#">JS<span>Practice</span></a>
+      <a href="#materi">Materi</a>
+      <a href="#praktik">Praktik</a>
+      <a href="#tentang">Tentang</a>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">BELAJAR • COBA • PAHAMI</p>
+      <h1>Latihan <span>JavaScript</span></h1>
+      <p>Website sederhana untuk mencoba dasar-dasar JavaScript secara langsung.</p>
+      <a class="btn" href="#praktik">Mulai Praktik ↓</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="materi" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">DASAR JAVASCRIPT</p>
+        <h2>Materi yang dipraktikkan</h2>
+        <p>Contoh konsep dasar JavaScript yang bisa dipelajari dan dikembangkan.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><span>01</span><h3>Variabel & Output</h3><p><code>let</code>, <code>const</code>, dan <code>console.log()</code>.</p></article>
+        <article class="card"><span>02</span><h3>Operator</h3><p>Operasi matematika dan perbandingan.</p></article>
+        <article class="card"><span>03</span><h3>Percabangan</h3><p>Penggunaan <code>if</code>, <code>else</code>, dan <code>switch</code>.</p></article>
+        <article class="card"><span>04</span><h3>Perulangan</h3><p>Contoh <code>for</code> dan <code>while</code>.</p></article>
+        <article class="card"><span>05</span><h3>Function</h3><p>Membuat fungsi agar kode lebih teratur.</p></article>
+        <article class="card"><span>06</span><h3>Array & Object</h3><p>Menyimpan banyak data dalam satu variabel.</p></article>
+        <article class="card"><span>07</span><h3>DOM & Event</h3><p>Mengubah halaman dan merespons klik.</p></article>
+        <article class="card"><span>08</span><h3>Form & Validasi</h3><p>Mengambil dan memeriksa input pengguna.</p></article>
+      </div>
+    </section>
+
+    <section id="praktik" class="section practice-section">
+      <div class="section-heading">
+        <p class="eyebrow">COBA SENDIRI</p>
+        <h2>Area Praktik Interaktif</h2>
+        <p>Tekan tombol dan masukkan data untuk melihat JavaScript bekerja.</p>
+      </div>
+
+      <div class="practice-grid">
+        <article class="practice-card">
+          <h3>1. Menampilkan pesan</h3>
+          <p>Contoh penggunaan variabel dan output.</p>
+          <button onclick="tampilkanPesan()">Tampilkan Pesan</button>
+          <div class="result" id="pesanOutput">Hasil akan muncul di sini.</div>
+        </article>
+
+        <article class="practice-card">
+          <h3>2. Kalkulator sederhana</h3>
+          <p>Contoh operator matematika.</p>
+          <div class="input-row"><input type="number" id="angka1" placeholder="Angka pertama"><input type="number" id="angka2" placeholder="Angka kedua"></div>
+          <select id="operator">
+            <option value="+">Penjumlahan (+)</option><option value="-">Pengurangan (-)</option>
+            <option value="*">Perkalian (×)</option><option value="/">Pembagian (÷)</option>
+          </select>
+          <button onclick="hitung()">Hitung</button>
+          <div class="result" id="hasilHitung">Hasil kalkulasi muncul di sini.</div>
+        </article>
+
+        <article class="practice-card">
+          <h3>3. Cek nilai</h3>
+          <p>Contoh percabangan <code>if/else</code>.</p>
+          <input type="number" id="nilai" placeholder="Masukkan nilai 0–100">
+          <button onclick="cekNilai()">Periksa Nilai</button>
+          <div class="result" id="hasilNilai">Status nilai muncul di sini.</div>
+        </article>
+
+        <article class="practice-card">
+          <h3>4. Perulangan angka</h3>
+          <p>Menampilkan angka 1 sampai angka yang dipilih.</p>
+          <input type="number" id="jumlahAngka" min="1" max="30" placeholder="Masukkan angka 1–30">
+          <button onclick="buatPerulangan()">Jalankan Perulangan</button>
+          <div class="result" id="hasilPerulangan">Hasil perulangan muncul di sini.</div>
+        </article>
+
+        <article class="practice-card">
+          <h3>5. Array buah</h3>
+          <p>Contoh array dan metode <code>push()</code>.</p>
+          <div class="input-row"><input type="text" id="buah" placeholder="Nama buah"><button onclick="tambahBuah()">Tambah</button></div>
+          <div class="result" id="daftarBuah">Apel, Mangga, Jeruk</div>
+        </article>
+
+        <article class="practice-card">
+          <h3>6. Jam digital</h3>
+          <p>Contoh objek Date dan pembaruan otomatis.</p>
+          <div class="clock" id="jam">00:00:00</div>
+          <button onclick="tampilkanTanggal()">Tampilkan Tanggal</button>
+          <div class="result" id="tanggal">Tanggal akan muncul di sini.</div>
+        </article>
+
+        <article class="practice-card">
+          <h3>7. Pengubah warna</h3>
+          <p>Contoh DOM dan event klik.</p>
+          <div class="color-box" id="kotakWarna">Klik tombol untuk mengganti warna</div>
+          <button onclick="ubahWarna()">Ganti Warna</button>
+        </article>
+
+        <article class="practice-card">
+          <h3>8. Form nama</h3>
+          <p>Contoh mengambil input dan validasi sederhana.</p>
+          <input type="text" id="nama" placeholder="Masukkan nama kamu">
+          <button onclick="sapaNama()">Kirim</button>
+          <div class="result" id="hasilNama">Sapaan akan muncul di sini.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="tentang" class="section about">
+      <div>
+        <p class="eyebrow">TENTANG WEBSITE</p>
+        <h2>Belajar dengan praktik</h2>
+        <p>Website ini dibuat sebagai latihan JavaScript dasar. HTML digunakan untuk struktur halaman, CSS untuk tampilan, dan JavaScript untuk membuat fitur interaktif.</p>
+      </div>
+      <div class="code-note">
+        <p><strong>File proyek:</strong></p>
+        <p><code>index.html</code> — struktur website</p>
+        <p><code>style.css</code> — desain website</p>
+        <p><code>script.js</code> — kode JavaScript</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
